@@ -4,6 +4,7 @@ body {
   padding: 0;
   background-color: hsl(210, 46%, 95%);
   font-size: 13px;
+  font-family: 'Manrope', sans-serif;
 }
 
 .container {
@@ -50,9 +51,6 @@ body {
   height: 100%;
 }
 
-.image-container {
-}
-
 .summary-container {
   padding: 20px 30px;
 }
@@ -91,9 +89,6 @@ h4 {
 }
 
 .share-menu {
-  position: absolute;
-  top: -110px;
-  left: -110px;
   display: flex;
   flex-direction: row;
   background-color: hsl(217, 19%, 35%);
@@ -110,4 +105,57 @@ h4 {
 
 .share-menu__hidden {
   display: none;
+}
+
+.menu {
+  position: absolute;
+  top: -110px;
+  left: -110px;
+}
+
+.menu::after {
+  content: '';
+  padding: 15px;
+  background-color: hsl(217, 19%, 35%);
+  transform: rotate(45deg);
+  position: absolute;
+  top: 60px;
+  left: 113px;
+}
+
+@media (max-width: 400px) {
+  .card {
+    flex-direction: column;
+    margin: 60px 10px;
+    width: 90%;
+  }
+
+  .image {
+    width: 100%;
+    height: 230px;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .menu {
+    position: absolute;
+    top: -4vh;
+    left: -82vw;
+  }
+
+  .share-menu {
+    width: 82vw;
+    border-radius: 0 0 10px 10px;
+    z-index: 5;
+  }
+
+  .menu::after {
+    display: none;
+  }
+
+  .button {
+    position: absolute;
+    z-index: 10;
+    top: -1vh;
+    left: -10vw;
+  }
 }
